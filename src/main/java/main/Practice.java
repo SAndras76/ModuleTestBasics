@@ -200,8 +200,17 @@ public class Practice {
      */
     public static int countVictories(int[] battles) {
 
+        int sumOfBattlesWon = 0;
 
-        return -1;
+        for (int i=0; i < battles.length; i++) {
+            if (battles[i] > 0) {
+                sumOfBattlesWon++;
+
+            }
+
+        }
+
+        return sumOfBattlesWon;
     }
 
     /**
