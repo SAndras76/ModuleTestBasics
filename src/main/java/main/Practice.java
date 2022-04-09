@@ -81,9 +81,9 @@ public class Practice {
 
         double sum = scores[0] + scores[scores.length-1];
 
-        double avarage = sum /2;
+        double averageScore = sum /2;
 
-        return avarage;
+        return averageScore;
     }
 
     /**
@@ -104,7 +104,13 @@ public class Practice {
      * @return a hajó harcképes-e
      */
     public static boolean isShipAbleToFight(int shieldCharge, int weaponCharge) {
-        return false;
+
+    double averagePower = (double) (shieldCharge + weaponCharge)/2;
+     if ((shieldCharge > 20 && weaponCharge > 20 && (averagePower > 50))) {
+         return true;
+     }else{
+         return false;
+     }
     }
 
     /**
@@ -136,8 +142,20 @@ public class Practice {
      * @return a megrendelés teljesítéséhez szükséges napok száma
      */
     public static int getSpaceRabbitDays(int startRabbitValue, int requiredRabbits) {
-        return -1;
+        int daysPassed = 0;
+
+        while (startRabbitValue < requiredRabbits) {
+            daysPassed++;
+            startRabbitValue *= 2;
+            if (startRabbitValue == requiredRabbits) {
+                break;
+            }
+            daysPassed++;
+        }
+        return daysPassed;
     }
+
+
 
     /**
      * 5. feladat - 3p
@@ -155,8 +173,13 @@ public class Practice {
      * @return a teljes sereg száma
      */
     public static int sumArmy(int[] armyOfPlanets) {
-        return -1;
+        int sumOfArmy = 0;
+        for (int armyOfPlanet : armyOfPlanets) {
+            sumOfArmy += armyOfPlanet;
+        }
+        return sumOfArmy;
     }
+
 
     /**
      * 6. feladat - 3p
@@ -174,6 +197,7 @@ public class Practice {
      * @return a megnyert csaták darabszáma
      */
     public static int countVictories(int[] battles) {
+
         return -1;
     }
 
