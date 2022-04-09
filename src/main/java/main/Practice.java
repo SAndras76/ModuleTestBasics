@@ -227,24 +227,30 @@ public class Practice {
      * @param heights a kadétok magassága
      */
     public static boolean isInAscendingOrder(int[] heights) {
-        for (int i = 0; i < heights.length; i++)
-        {
-            for (int j = i + 1; j < heights.length; j++)
-            {
-                int ordering = 0;
-                if (heights[i] > heights[j])
-                {
-                    ordering = heights[i];
-                    heights[i] = heights[j];
-                    heights[j] = ordering;
+
+        int[] clone = heights.clone();
+
+        for (int i = 0; i < heights.length - 1; i++) {
+            boolean sorted = true;
+            for (int j = 0; j < heights.length - i - 1; j++) {
+
+                if (clone[j] > clone[j + 1]) {
+                    int swap = clone[j];
+                    clone[j] = clone[j + 1];
+                    clone[j + 1] = swap;
+                    sorted = true;
                 }
+                //return false;
             }
 
-            System.out.println(heights[i]);
-
-
-    }return false;
+            if (sorted) {
+                break;
+            }
+            return sorted;
+        }
     }
+
+
 
     /**
      * 8. feladat - 4p
@@ -268,8 +274,17 @@ public class Practice {
      * @return az eredeti üzenet karakterei fordított sorrendben
      */
     public static char[] reverseMessage(char[] message) {
-        return null;
+        char newChars = 0;
+        for (int i = 0; i < message.length / 2; i++) {
+        newChars = message[i];
+            message[i] = message[message.length-1-i];
+            message[message.length -1-i] = newChars;
+        }
+
+
+        return message;
     }
+
 
     /**
      * 9. feladat - 5p
