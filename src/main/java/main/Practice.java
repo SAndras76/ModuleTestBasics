@@ -36,7 +36,29 @@ public class Practice {
      * @return a pajzs ereje
      */
     public static int getShieldPower(String shipClass) {
-        return -1;
+        int shield = 0;
+
+        switch (shipClass) {
+            case "Intrepid":
+                shield += 100;
+                break;
+            case "Nova":
+                shield += 200;
+                break;
+            case "Raven":
+                shield += 300;
+                break;
+            case "Galaxy":
+                shield += 500;
+                break;
+            case "Dreadnought":
+                shield += 800;
+                break;
+            default:
+                shield += 0;
+                break;
+        }
+        return shield;
     }
 
     /**
@@ -56,7 +78,12 @@ public class Practice {
      * @return az elvárt szint
      */
     public static double countRequirement(int[] scores) {
-        return 0.0;
+
+        double sum = scores[0] + scores[scores.length-1];
+
+        double avarage = sum /2;
+
+        return avarage;
     }
 
     /**
