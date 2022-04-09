@@ -142,17 +142,19 @@ public class Practice {
      * @return a megrendelés teljesítéséhez szükséges napok száma
      */
     public static int getSpaceRabbitDays(int startRabbitValue, int requiredRabbits) {
-        int daysPassed = 0;
+        int daysPassed = 1;
+        if(startRabbitValue >= requiredRabbits){
 
-        while (startRabbitValue < requiredRabbits) {
-            daysPassed++;
-            startRabbitValue *= 2;
-            if (startRabbitValue == requiredRabbits) {
-                break;
+            return daysPassed;
+
+        }else{
+
+            while (startRabbitValue < requiredRabbits){
+                startRabbitValue *=2;
+                daysPassed++;
             }
-            daysPassed++;
+            return daysPassed;
         }
-        return daysPassed;
     }
 
 
@@ -197,6 +199,7 @@ public class Practice {
      * @return a megnyert csaták darabszáma
      */
     public static int countVictories(int[] battles) {
+
 
         return -1;
     }
